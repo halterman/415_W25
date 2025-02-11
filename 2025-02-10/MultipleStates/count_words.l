@@ -62,6 +62,11 @@ std::string capitalize(const std::string& str);
                 //unput(*yytext);
             }
 
+<CAPS>\.          { /* Rule to detect a period (call it a dot) */
+                std::cout << "DOT"; 
+            }
+
+
 %%
 
 //int yywrap() {
@@ -74,13 +79,13 @@ std::string number_to_word(const std::string& str) {
     } else if (str == "2") {
         return "(two)";
     } else if (str == "3") {
-        return "three";
+        return "(three)";
     } else if (str == "4") {
-        return "four";
+        return "(four)";
     } else if (str == "5") {
-        return "five";
+        return "(five)";
     } else {
-        return "?????";
+        return "(*?????*)";
     }
 }
 

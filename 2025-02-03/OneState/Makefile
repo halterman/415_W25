@@ -10,7 +10,7 @@ FLAGS = -g -Wall -Wextra -Wpedantic -Wno-unused-function -Wno-unused-parameter -
 all: count_words
 
 count_words: lex.yy.o 
-	g++ ${OP} ${FLAGS} -o count_words lex.yy.o 
+	${CC} ${OP} ${FLAGS} -o count_words lex.yy.o 
 
 lex.yy.o: lex.yy.cpp
 	${CC} ${OP} ${FLAGS} -Wno-sign-compare -c lex.yy.cpp 
